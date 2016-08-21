@@ -1,0 +1,28 @@
+{
+  "name": "express-boilerplate",
+  "description": "Rapid feedback cycle whilst developing",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "npm-run-all --parallel dev-app dev-browsersync dev-sass",
+    "dev-app": "nodemon ./bin/www",
+    "dev-browsersync": "browser-sync start proxy 'localhost:3000'  --files 'src' --reload-delay 400",
+    "dev-sass": "node-sass ./src/style/app.scss -w -o ./src/public/stylesheets"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "express": "~4.13.4",
+    "hbs": "~4.0.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "debug": "~2.2.0",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.10.2",
+    "npm-run-all": "^3.0.0"
+  }
+}
